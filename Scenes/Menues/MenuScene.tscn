@@ -1,14 +1,79 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Assets/Fonts/Painless_24.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Fonts/Painless_64.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/title/skeleton-title_03.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/MenuScene.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Fonts/ZOMBIES REBORN.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/title/skeleton-title_05.png" type="Texture" id=4]
 [ext_resource path="res://Assets/MenuBack.png" type="Texture" id=5]
+[ext_resource path="res://Assets/title/skeleton-title_11.png" type="Texture" id=6]
+[ext_resource path="res://Assets/title/skeleton-title_16.png" type="Texture" id=7]
+[ext_resource path="res://Assets/title/skeleton-title_00.png" type="Texture" id=8]
+[ext_resource path="res://Assets/title/skeleton-title_07.png" type="Texture" id=9]
+[ext_resource path="res://Assets/title/skeleton-title_13.png" type="Texture" id=10]
+[ext_resource path="res://Assets/title/skeleton-title_14.png" type="Texture" id=11]
+[ext_resource path="res://Assets/title/skeleton-title_15.png" type="Texture" id=12]
+[ext_resource path="res://Assets/title/skeleton-title_12.png" type="Texture" id=13]
+[ext_resource path="res://Assets/title/skeleton-title_17.png" type="Texture" id=14]
+[ext_resource path="res://Assets/title/skeleton-title_18.png" type="Texture" id=15]
+[ext_resource path="res://Assets/title/skeleton-title_19.png" type="Texture" id=16]
+[ext_resource path="res://Assets/title/skeleton-title_08.png" type="Texture" id=17]
+[ext_resource path="res://Assets/title/skeleton-title_21.png" type="Texture" id=18]
+[ext_resource path="res://Assets/title/skeleton-title_23.png" type="Texture" id=19]
+[ext_resource path="res://Assets/title/skeleton-title_01.png" type="Texture" id=20]
+[ext_resource path="res://Assets/title/skeleton-title_06.png" type="Texture" id=21]
+[ext_resource path="res://Assets/title/skeleton-title_22.png" type="Texture" id=22]
+[ext_resource path="res://Assets/title/skeleton-title_20.png" type="Texture" id=23]
+[ext_resource path="res://Assets/title/skeleton-title_25.png" type="Texture" id=24]
+[ext_resource path="res://Assets/title/skeleton-title_28.png" type="Texture" id=25]
+[ext_resource path="res://Assets/title/skeleton-title_04.png" type="Texture" id=26]
+[ext_resource path="res://Assets/title/skeleton-title_09.png" type="Texture" id=27]
+[ext_resource path="res://Assets/title/skeleton-title_26.png" type="Texture" id=28]
+[ext_resource path="res://Assets/title/skeleton-title_29.png" type="Texture" id=29]
+[ext_resource path="res://Assets/title/skeleton-title_30.png" type="Texture" id=30]
+[ext_resource path="res://Assets/title/skeleton-title_27.png" type="Texture" id=31]
+[ext_resource path="res://Assets/title/skeleton-title_24.png" type="Texture" id=32]
+[ext_resource path="res://Assets/title/skeleton-title_10.png" type="Texture" id=33]
+[ext_resource path="res://Assets/title/skeleton-title_02.png" type="Texture" id=34]
+[ext_resource path="res://Assets/title/skeleton-title_32.png" type="Texture" id=35]
+[ext_resource path="res://Assets/title/skeleton-title_34.png" type="Texture" id=36]
+[ext_resource path="res://Assets/title/skeleton-title_35.png" type="Texture" id=37]
+[ext_resource path="res://Assets/title/skeleton-title_31.png" type="Texture" id=38]
+[ext_resource path="res://Assets/title/skeleton-title_36.png" type="Texture" id=39]
+[ext_resource path="res://Assets/title/skeleton-title_33.png" type="Texture" id=40]
+[ext_resource path="res://Assets/title/skeleton-title_40.png" type="Texture" id=41]
+[ext_resource path="res://Assets/title/skeleton-title_41.png" type="Texture" id=42]
+[ext_resource path="res://Assets/title/skeleton-title_38.png" type="Texture" id=43]
+[ext_resource path="res://Assets/title/skeleton-title_39.png" type="Texture" id=44]
+[ext_resource path="res://Assets/title/skeleton-title_37.png" type="Texture" id=45]
+[ext_resource path="res://Assets/title/skeleton-title_54.png" type="Texture" id=46]
+[ext_resource path="res://Assets/title/skeleton-title_56.png" type="Texture" id=47]
+[ext_resource path="res://Assets/title/skeleton-title_59.png" type="Texture" id=48]
+[ext_resource path="res://Assets/title/skeleton-title_51.png" type="Texture" id=49]
+[ext_resource path="res://Assets/title/skeleton-title_55.png" type="Texture" id=50]
+[ext_resource path="res://Assets/title/skeleton-title_44.png" type="Texture" id=51]
+[ext_resource path="res://Assets/title/skeleton-title_58.png" type="Texture" id=52]
+[ext_resource path="res://Assets/title/skeleton-title_43.png" type="Texture" id=53]
+[ext_resource path="res://Assets/title/skeleton-title_53.png" type="Texture" id=54]
+[ext_resource path="res://Assets/title/skeleton-title_42.png" type="Texture" id=55]
+[ext_resource path="res://Assets/title/skeleton-title_47.png" type="Texture" id=56]
+[ext_resource path="res://Assets/title/skeleton-title_48.png" type="Texture" id=57]
+[ext_resource path="res://Assets/title/skeleton-title_49.png" type="Texture" id=58]
+[ext_resource path="res://Assets/title/skeleton-title_57.png" type="Texture" id=59]
+[ext_resource path="res://Assets/title/skeleton-title_52.png" type="Texture" id=60]
+[ext_resource path="res://Assets/title/skeleton-title_45.png" type="Texture" id=61]
+[ext_resource path="res://Assets/title/skeleton-title_50.png" type="Texture" id=62]
+[ext_resource path="res://Assets/title/skeleton-title_46.png" type="Texture" id=63]
 
-[sub_resource type="DynamicFont" id=2]
-size = 50
-font_data = ExtResource( 4 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 20 ), ExtResource( 34 ), ExtResource( 2 ), ExtResource( 26 ), ExtResource( 4 ), ExtResource( 21 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 61 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 49 ), ExtResource( 60 ), ExtResource( 54 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 59 ), ExtResource( 52 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.145098, 0.121569, 0.184314, 0.752941 )
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -19,59 +84,61 @@ anchor_bottom = 1.0
 texture = ExtResource( 5 )
 expand = true
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MenuBackground"]
+position = Vector2( 509, 198 )
+scale = Vector2( 1.02957, 0.790456 )
+frames = SubResource( 1 )
+frame = 33
+playing = true
+
 [node name="MarginContainer" type="MarginContainer" parent="MenuBackground"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 60.0
-margin_right = -40.0
-margin_bottom = -40.0
+margin_top = -195.0
 
 [node name="Rows" type="VBoxContainer" parent="MenuBackground/MarginContainer"]
-margin_right = 944.0
-margin_bottom = 500.0
+margin_right = 1024.0
+margin_bottom = 195.0
 custom_constants/separation = 60
 
-[node name="text" type="Label" parent="MenuBackground/MarginContainer/Rows"]
-margin_right = 944.0
-margin_bottom = 94.0
-custom_fonts/font = ExtResource( 2 )
-text = "SILENCE"
-align = 1
-valign = 1
-
 [node name="CenterContainer" type="CenterContainer" parent="MenuBackground/MarginContainer/Rows"]
-margin_top = 154.0
-margin_right = 944.0
-margin_bottom = 234.0
+margin_right = 1024.0
+margin_bottom = 30.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/MarginContainer/Rows/CenterContainer"]
-margin_left = 409.0
-margin_right = 534.0
-margin_bottom = 80.0
+[node name="VBoxContainer" type="HBoxContainer" parent="MenuBackground/MarginContainer/Rows/CenterContainer"]
+margin_left = 386.0
+margin_right = 637.0
+margin_bottom = 30.0
 custom_constants/separation = 20
 
 [node name="restart" type="Button" parent="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer"]
-margin_right = 125.0
+margin_right = 116.0
 margin_bottom = 30.0
 custom_fonts/font = ExtResource( 1 )
-text = "   START  "
+text = "  START  "
+align = 0
+icon_align = 1
 
 [node name="quit" type="Button" parent="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer"]
-margin_top = 50.0
-margin_right = 125.0
-margin_bottom = 80.0
+margin_left = 136.0
+margin_right = 251.0
+margin_bottom = 30.0
 custom_fonts/font = ExtResource( 1 )
-text = "Quit "
+text = "   Quit   "
 
 [node name="Warning" type="Label" parent="MenuBackground/MarginContainer/Rows"]
-margin_top = 294.0
-margin_right = 944.0
-margin_bottom = 399.0
-custom_fonts/font = SubResource( 2 )
-text = "Warning: This game contains flashing lights, and disturbing noises, viewer discression is advised. "
+margin_top = 90.0
+margin_right = 1024.0
+margin_bottom = 195.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "
+ Warning: This game contains flashing lights, and disturbing noises, viewer discression is advised. 
+"
 align = 1
 autowrap = true
 
 [connection signal="pressed" from="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="toggled" from="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_toggled"]

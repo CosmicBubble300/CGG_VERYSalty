@@ -102,6 +102,9 @@ func _physics_process(delta):
 	
 	
 ### OXYGEN ###
+func _on_Suffocate_finished():
+	# Kills character after they suffocate
+	get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 
 # Recieves signal from timer to decrease Oxygen 
 func _on_OxygenTimer_timeout():
@@ -119,6 +122,7 @@ func _on_OxygenTimer_timeout():
 		# This code gives the player a window while their character suffocates 
 		if $Suffocate.playing == false:
 			$Suffocate.play()
+			$OxygenTimer.stop()
 		else:
 			$Breathing.stop()
 		# Kills the character when overtime runs out. 
@@ -155,6 +159,3 @@ func _on_HitBox_body_entered(body):
 		
 
 
-func _on_Suffocate_finished():
-	# Kills character after they suffocate
-	get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
