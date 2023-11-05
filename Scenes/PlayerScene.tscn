@@ -91,7 +91,7 @@ autostart = true
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 2.2, 2.2 )
+zoom = Vector2( 3, 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( -2, -7 )
