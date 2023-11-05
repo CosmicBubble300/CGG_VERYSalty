@@ -103,7 +103,7 @@ shape = SubResource( 1 )
 position = Vector2( -2, 1 )
 frames = SubResource( 2 )
 animation = "MonsterAnim"
-frame = 9
+frame = 17
 playing = true
 __meta__ = {
 "_edit_lock_": true
