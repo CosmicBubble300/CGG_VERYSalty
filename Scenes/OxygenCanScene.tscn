@@ -10,6 +10,7 @@ radius = 66.2722
 script = ExtResource( 1 )
 
 [node name="InArea\?" type="Area2D" parent="."]
+collision_layer = 7
 
 [node name="ColisionArea" type="CollisionShape2D" parent="InArea\?"]
 shape = SubResource( 1 )

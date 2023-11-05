@@ -24,7 +24,6 @@ func _on_InArea_body_entered(body):
 		# randomizes the amount of air in a canister
 		airamount.randomize()
 		var randNum = airamount.randi_range(20,100)
-		print(randNum)
 		# adds air amount to tank list
 		global_vars.tank_list.append(randNum)
 		

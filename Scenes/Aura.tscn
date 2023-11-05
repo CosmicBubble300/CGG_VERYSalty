@@ -7,5 +7,7 @@
 position = Vector2( -42.9999, -27.0001 )
 scale = Vector2( 18.8236, 17.8619 )
 texture = ExtResource( 1 )
+texture_scale = 0.75
 color = Color( 0.054902, 0, 1, 1 )
+energy = 0.9
 script = ExtResource( 2 )

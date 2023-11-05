@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/NewTiles/sideWallsTest.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerScene.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scenes/MonsterScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DoorScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Screen_3.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Aura.tscn" type="PackedScene" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=42]
 polygon = PoolVector2Array( 32, 640, 0, 640, 0, 0, 32, 0 )
@@ -123,9 +122,6 @@ position = Vector2( 1902, 1127 )
 
 [node name="Monster" parent="." instance=ExtResource( 5 )]
 collision_layer = 3
-
-[node name="Aura" parent="Monster" instance=ExtResource( 8 )]
-color = Color( 0.784314, 0.219608, 0.219608, 1 )
 
 [node name="Shadows" type="CanvasModulate" parent="."]
 color = Color( 0.115809, 0.0677413, 0.234375, 1 )
