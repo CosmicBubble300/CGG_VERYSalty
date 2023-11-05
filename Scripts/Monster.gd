@@ -1,5 +1,15 @@
 extends KinematicBody2D
 
+
+var colShift = 0
+
+func _ready():
+	while colShift != 1:
+		$Aura.color(colShift)
+		colShift += 0.01
+	pass
+	
+
 ### SIGNALS ###
 
 
@@ -30,3 +40,4 @@ func _physics_process(delta):
 	#if player close enough
 	if position.distance_to(mcpos) > 3:
 		move_and_slide(targetpos * run)
+
