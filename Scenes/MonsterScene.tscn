@@ -1,17 +1,90 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Monster.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sad.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_02.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Lights/Aura.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Audio/space_radio.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_03.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_00.png" type="Texture" id=6]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_05.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_06.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_07.png" type="Texture" id=9]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_20.png" type="Texture" id=10]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_01.png" type="Texture" id=11]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_19.png" type="Texture" id=12]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_04.png" type="Texture" id=13]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_08.png" type="Texture" id=14]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_09.png" type="Texture" id=15]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_21.png" type="Texture" id=16]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_24.png" type="Texture" id=17]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_26.png" type="Texture" id=18]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_27.png" type="Texture" id=19]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_25.png" type="Texture" id=20]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_22.png" type="Texture" id=21]
+[ext_resource path="res://Assets/MonsterAnimation/skeleton-animation_23.png" type="Texture" id=22]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 121.0
 height = 0.0
 
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 232, 139, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 348, 139, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 278, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 116, 278, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 232, 278, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 348, 278, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 417, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 116, 417, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 232, 417, 116, 139 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 348, 417, 116, 139 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "MonsterAnim",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -26,7 +99,11 @@ modulate = Color( 0.780392, 0.25098, 0.25098, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = 0.872665
 frames = SubResource( 2 )
+animation = "MonsterAnim"
+frame = 4
+playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
