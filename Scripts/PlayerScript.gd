@@ -95,7 +95,7 @@ func _on_OxygenTimer_timeout():
 		overtime -= O2_change
 		# Kills the character when overtime runs out. 
 		if overtime == 0:
-			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
+			get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 
 
 
@@ -112,7 +112,7 @@ func _on_HitBox_body_entered(body):
 	# decides what happens on hit 
 	if randNum <= 3:
 		# if the value is less than the character dies 
-		get_tree().change_scene("res://Scenes/GameOverScene.tscn")
+		get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 		print("dead")
 	elif randNum >= 4 and randNum <= 9:
 		# if the value is between 4 and 8 you loose an oxygen tank
@@ -123,7 +123,7 @@ func _on_HitBox_body_entered(body):
 			# lets you know you can carry more tanks
 		else:
 			# if you have no oxygen you die 
-			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
+			get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 	else:
 		# if your lucky, you live.
 		print("live")

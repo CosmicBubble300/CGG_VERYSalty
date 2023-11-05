@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Scripts/FlashingLight.gd" type="Script" id=1]
-[ext_resource path="res://Assets/light.png" type="Texture" id=2]
-
-[node name="Light" type="Light2D"]
-texture = ExtResource( 2 )
-script = ExtResource( 1 )

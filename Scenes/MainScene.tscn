@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/OxygenCanScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/NewTiles/cornerWall.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/MonsterScene.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/SlidingDoorScene.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Screen_3.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Doors/SlidingDoorScene.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/TileSet/Screen_3.png" type="Texture" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=42]
 polygon = PoolVector2Array( 32, 640, 0, 640, 0, 0, 32, 0 )
