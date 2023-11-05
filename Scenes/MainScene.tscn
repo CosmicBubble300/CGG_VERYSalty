@@ -121,7 +121,6 @@ position = Vector2( 664, 1137 )
 position = Vector2( 1902, 1127 )
 
 [node name="Monster" parent="." instance=ExtResource( 5 )]
-collision_layer = 3
 
 [node name="Shadows" type="CanvasModulate" parent="."]
 color = Color( 0.115809, 0.0677413, 0.234375, 1 )

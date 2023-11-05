@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/PlayerScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SlidingDoorScene.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Assets/FinalTileSets/GenericDecor.tres" type="TileSet" id=5]
 [ext_resource path="res://Assets/FinalTileSets/WallTest_2.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/FinalTileSets/Floor.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/FlashingLight.tscn" type="PackedScene" id=8]
 
-[node name="LV1_CrewQuarters" type="Node2D"]
+[node name="LV1_TestLevel" type="Node2D"]
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
@@ -35,6 +36,7 @@ tile_data = PoolIntArray( -983043, 0, 0, -983042, -1610612736, 0, -1048576, 1610
 position = Vector2( 5014, 4777 )
 
 [node name="Shadows" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.115809, 0.0677413, 0.234375, 1 )
 
 [node name="Oxygen" type="Node2D" parent="."]
@@ -59,3 +61,25 @@ position = Vector2( 3483, 5249 )
 
 [node name="SlidingDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, -1841 )
+
+[node name="HelmetLights" type="Node2D" parent="."]
+
+[node name="Light" parent="HelmetLights" instance=ExtResource( 8 )]
+position = Vector2( 523, 1696 )
+scale = Vector2( 0.249023, 0.272461 )
+energy = 1.58
+
+[node name="Light2" parent="HelmetLights" instance=ExtResource( 8 )]
+position = Vector2( 2695, 2613 )
+scale = Vector2( 0.249023, 0.272461 )
+energy = 1.58
+
+[node name="Light3" parent="HelmetLights" instance=ExtResource( 8 )]
+position = Vector2( -1723, 4346 )
+scale = Vector2( 0.249023, 0.272461 )
+energy = 1.58
+
+[node name="Light4" parent="HelmetLights" instance=ExtResource( 8 )]
+position = Vector2( 3275, 5322 )
+scale = Vector2( 0.249023, 0.272461 )
+energy = 1.58
