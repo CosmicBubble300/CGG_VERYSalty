@@ -26,6 +26,7 @@ func _on_InArea_body_entered(body):
 		var randNum = airamount.randi_range(20,100)
 		# adds air amount to tank list
 		global_vars.tank_list.append(randNum)
+		emit_signal("tanks_update")
 		
 		# adds tank to tankcount
 		print(len(global_vars.tank_list))
