@@ -73,4 +73,5 @@ custom_fonts/font = ExtResource( 1 )
 text = "Quit "
 
 [connection signal="pressed" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="toggled" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_toggled"]

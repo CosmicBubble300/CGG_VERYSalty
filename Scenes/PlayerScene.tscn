@@ -5,9 +5,9 @@
 [ext_resource path="res://Assets/light.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=4]
 [ext_resource path="res://Assets/FinalTileSets/Sengatz_24.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Audio/Heavy_breathing.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Heavy_breathing.tres" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/Ambient_Machines.mp3" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Audio/Suffocate-1.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Suffocate-1.tres" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 114, 198.5 )
@@ -84,6 +84,7 @@ __meta__ = {
 position = Vector2( -135, -212 )
 frames = ExtResource( 1 )
 animation = "BackIdle"
+frame = 29
 playing = true
 centered = false
 
