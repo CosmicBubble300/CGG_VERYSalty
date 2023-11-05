@@ -135,12 +135,11 @@ rect_clip_content = true
 custom_styles/panel = SubResource( 6 )
 
 [node name="O2CounterText" type="Label" parent="HUD/O2Counter"]
-margin_left = 9.33325
-margin_top = 14.6667
-margin_right = 102.333
-margin_bottom = 102.667
+margin_top = -32.0
+margin_right = 113.0
+margin_bottom = 119.0
 custom_fonts/font = ExtResource( 5 )
-text = "1"
+text = "0"
 align = 1
 valign = 1
 autowrap = true
