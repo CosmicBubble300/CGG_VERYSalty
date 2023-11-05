@@ -22,12 +22,13 @@ onready var mc = get_parent().get_node("Character") #get main char
 
 ### MOVEMENT ###
 func _physics_process(delta):
-
-	
 	mcpos = mc.position # get mc position
 	targetpos = (mcpos - position).normalized() #normalize distance
 	
 	#if player close enough
-	if position.distance_to(mcpos) > 3:
+	if position.distance_to(mcpos) < 1500:
 		move_and_slide(targetpos * run)
+		
+	#else:
+	#	move_and_slide()
 
