@@ -88,8 +88,7 @@ expand = true
 position = Vector2( 509, 198 )
 scale = Vector2( 1.02957, 0.790456 )
 frames = SubResource( 1 )
-frame = 33
-playing = true
+frame = 28
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuBackground"]
 anchor_top = 1.0
