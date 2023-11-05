@@ -36,12 +36,14 @@ __meta__ = {
 }
 
 [node name="OxygenBar" type="ProgressBar" parent="."]
-margin_left = 979.0
+margin_left = 964.0
 margin_top = 598.0
-margin_right = 1337.0
-margin_bottom = 688.0
+margin_right = 1322.0
+margin_bottom = 703.0
 rect_rotation = 270.0
+custom_colors/font_color = Color( 0.0588235, 0.0431373, 0.372549, 1 )
 value = 100.0
+rounded = true
 percent_visible = false
 
 [node name="OxygenTimer" type="Timer" parent="."]
