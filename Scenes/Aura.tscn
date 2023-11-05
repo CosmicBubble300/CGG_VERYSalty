@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/light.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Aura.gd" type="Script" id=2]
+
+[node name="Aura" type="Light2D"]
+position = Vector2( -42.9999, -27.0001 )
+scale = Vector2( 18.8236, 17.8619 )
+texture = ExtResource( 1 )
+color = Color( 0.054902, 0, 1, 1 )
+script = ExtResource( 2 )
