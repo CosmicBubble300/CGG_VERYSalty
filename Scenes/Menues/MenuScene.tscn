@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/Painless_24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Fonts/Painless_64.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/MenuScene.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/ZOMBIES REBORN.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.101961, 0.133333, 0.247059, 1 )
@@ -17,6 +18,10 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 4 )
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -41,16 +46,16 @@ custom_constants/separation = 60
 
 [node name="text" type="Label" parent="Panel/MarginContainer/Rows"]
 margin_right = 944.0
-margin_bottom = 63.0
+margin_bottom = 94.0
 custom_fonts/font = ExtResource( 2 )
 text = "SILENCE"
 align = 1
 valign = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/Rows"]
-margin_top = 123.0
+margin_top = 154.0
 margin_right = 944.0
-margin_bottom = 203.0
+margin_bottom = 234.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Rows/CenterContainer"]
 margin_left = 409.0
@@ -70,6 +75,15 @@ margin_right = 125.0
 margin_bottom = 80.0
 custom_fonts/font = ExtResource( 1 )
 text = "Quit "
+
+[node name="Warning" type="Label" parent="Panel/MarginContainer/Rows"]
+margin_top = 294.0
+margin_right = 944.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 2 )
+text = "Warning: This game contains flashing lights, and disturbing noises, viewer discression is advised. "
+align = 1
+autowrap = true
 
 [connection signal="pressed" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="toggled" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_toggled"]

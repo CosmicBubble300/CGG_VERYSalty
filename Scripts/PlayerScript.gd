@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 ### SIGNALS ###
-signal game_over    # Player has been killed
+signal tanks_update    # Player has been killed
 
 ### CONSTANTS ###
 # Defines constants for movement speed 
@@ -41,24 +41,32 @@ func read_input():
 	
 	if Input.is_action_pressed("UP"):
 		velocity.y -= 1
+		$Sprite.play("BackRun")
 		direction = Vector2(0,-1)
 		
 	if Input.is_action_pressed("DOWN"):
 		velocity.y += 1
 		direction = Vector2(0, 1)
+		$Sprite.play("FrontRun")
 		
 	if Input.is_action_pressed("L"):
 		velocity.x -= 1
+		$Sprite.flip_h = true
+		$Sprite.play("SideRun")
 		direction = Vector2(-1, 0)
 		
 	if Input.is_action_pressed("R"):
 		velocity.x += 1
+		$Sprite.flip_h = false
+		$Sprite.play("SideRun")
 		direction = Vector2(1, 0)
+		
 		
 	# prevents you moving twice as fast on the diagonals 
 	velocity = velocity.normalized()
 	
 	# Applies walking, running and crouching speed to the character
+	# Also modulates oxygen consumption
 	if Input.is_action_pressed("SPRINT"):
 		# checks for collision and makes movement smooth
 		velocity = move_and_slide(velocity * RUN)
@@ -73,6 +81,20 @@ func read_input():
 		# Sets oxygen consumption to normal
 		O2_change = O2CONSBASE
 		
+		
+	# Uses movement direction to define idle direction
+	if velocity == Vector2(0,0):
+		if direction == Vector2(0,-1):
+			$Sprite.play("BackIdle")
+		elif direction == Vector2(0,1):
+			$Sprite.play("FrontIdle")
+		elif direction == Vector2(-1,0):
+			$Sprite.play("SideIdle")
+		elif direction == Vector2(1,0):
+			$Sprite.play("SideIdle")
+		else:
+			$Sprite.play("BackIdle")
+
 # calls the movement function that defines the player movement
 func _physics_process(delta):
 	# reads imput around 60 times per second 
@@ -83,6 +105,7 @@ func _physics_process(delta):
 
 # Recieves signal from timer to decrease Oxygen 
 func _on_OxygenTimer_timeout():
+	emit_signal("tanks_update")
 	#Decreases the amount of oxygen in the bar as a function of time 
 	$HUD/OxygenBar.value -= O2_change
 	# Replenishes O2 with spare tank when oxygen is empty
@@ -90,11 +113,13 @@ func _on_OxygenTimer_timeout():
 		$HUD/OxygenBar.value = global_vars.tank_list[0]
 		# Removes one spare tank
 		global_vars.tank_list.remove(0)
+		emit_signal("tanks_update")
 	elif $HUD/OxygenBar.value <= 0 and len(global_vars.tank_list)  == 0:
 		# This code gives the player a window while their character suffocates 
 		overtime -= O2_change
+		print(overtime)
 		# Kills the character when overtime runs out. 
-		if overtime == 0:
+		if overtime <= 0:
 			get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 
 
@@ -120,6 +145,7 @@ func _on_HitBox_body_entered(body):
 		if len(global_vars.tank_list) != 0:
 			# removes tank
 			global_vars.tank_list.remove(0) 
+			emit_signal("tanks_update")
 			# lets you know you can carry more tanks
 		else:
 			# if you have no oxygen you die 
