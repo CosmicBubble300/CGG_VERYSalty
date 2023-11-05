@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Suffocate-1.mp3-828eeb497420d5d0bb53faaccdf32a4d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Suffocate-1.mp3"
+dest_files=[ "res://.import/Suffocate-1.mp3-828eeb497420d5d0bb53faaccdf32a4d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

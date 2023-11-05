@@ -42,6 +42,7 @@ position = Vector2( 3, -3 )
 position = Vector2( 3745, 7172 )
 
 [node name="Shadows" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.115809, 0.0677413, 0.234375, 1 )
 
 [node name="Oxygen" type="Node2D" parent="."]
@@ -66,7 +67,7 @@ position = Vector2( -1547, 4407 )
 position = Vector2( 3483, 5249 )
 
 [node name="SlidingDoor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 38, -1841 )
+position = Vector2( -2191, -1422 )
 
 [node name="Lights" type="Node2D" parent="."]
 

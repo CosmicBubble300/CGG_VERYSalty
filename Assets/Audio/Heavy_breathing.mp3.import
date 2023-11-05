@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heavy_breathing.mp3-b5200ca329bd26cf0e44b4a4ef6e2e55.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Heavy_breathing.mp3"
+dest_files=[ "res://.import/Heavy_breathing.mp3-b5200ca329bd26cf0e44b4a4ef6e2e55.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
