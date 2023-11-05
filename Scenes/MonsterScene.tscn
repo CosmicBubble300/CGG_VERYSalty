@@ -103,7 +103,7 @@ shape = SubResource( 1 )
 position = Vector2( -2, 1 )
 frames = SubResource( 2 )
 animation = "MonsterAnim"
-frame = 8
+frame = 17
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -122,3 +122,9 @@ stream = ExtResource( 4 )
 volume_db = -14.456
 autoplay = true
 attenuation = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

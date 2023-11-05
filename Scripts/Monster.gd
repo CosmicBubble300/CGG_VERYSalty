@@ -1,34 +1,34 @@
 extends KinematicBody2D
 
-
-## Animation ##
-#func _ready():
-#	var frames = $RigidBody2D/AnimatedSprite2D.sprite_frames.get_animation_named()
-	
-
 ### CONSTANTS ###
 # Defines constants for movement speed 
-export var regspeed = 120
-export var run = 700
-
+const regspeed = 200
+const run = 700
 
 ### Variables ###
-
-
 # Define Movements Variables 
 var mcpos # main character position
-var targetpos # target position of enemy
+var targetpos # enemy moves to this target when a player is detected
+var randompos # enemy moves here randomly
 onready var mc = get_parent().get_node("Character") #get main char
+var x = rand_range(-1000, 15000) # x coordinate for random move
+var y = rand_range(-1000, 15000) # y coordinate for random move
+
 
 ### MOVEMENT ###
 func _physics_process(delta):
 	mcpos = mc.position # get mc position
-	targetpos = (mcpos - position).normalized() #normalize distance
+	targetpos = (mcpos - position).normalized() #normalize vector
+	randompos = (Vector2(x, y) - position).normalized()
 	
-	#if player close enough
-	if position.distance_to(mcpos) < 1500:
-		move_and_slide(targetpos * run)
-		
-	#else:
-	#	move_and_slide()
-
+	#if player is close enough
+	if position.distance_to(mcpos) < 2500:
+		move_and_slide(targetpos * run) # gun for them
+	else: # otherwise patrol randomly
+		move_and_slide(randompos * regspeed) 
+	
+func _on_Timer_timeout():
+	x = rand_range(-1000, 15000)
+	y = rand_range(-1000, 15000)
+	
+	pass # Replace with function body.
