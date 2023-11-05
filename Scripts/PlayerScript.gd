@@ -22,10 +22,10 @@ onready var global_vars = get_node("/root/Global")
 # Variables for health and oxygen consumption 
 var O2 = 100                # Max O2
 var O2_change = O2CONSBASE  # regular rate of O2 depletion
-var overtime = 10           # Amount of time you can live without air 
 
 # Tank Variables 
-var tank_full = 100        # How much oxygen is in a full tank
+var tank_full = 10
+		# How much oxygen is in a full tank
 
 # Define Movements Variables 
 # How fast a character is going 
@@ -113,14 +113,15 @@ func _on_OxygenTimer_timeout():
 		$HUD/OxygenBar.value = global_vars.tank_list[0]
 		# Removes one spare tank
 		global_vars.tank_list.remove(0)
+		$Breathing.play()
 		emit_signal("tanks_update")
 	elif $HUD/OxygenBar.value <= 0 and len(global_vars.tank_list)  == 0:
 		# This code gives the player a window while their character suffocates 
-		overtime -= O2_change
-		print(overtime)
+		if $Suffocate.playing == false:
+			$Suffocate.play()
+		else:
+			$Breathing.stop()
 		# Kills the character when overtime runs out. 
-		if overtime <= 0:
-			get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 
 
 
@@ -138,10 +139,8 @@ func _on_HitBox_body_entered(body):
 	if randNum <= 3:
 		# if the value is less than the character dies 
 		get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
-		print("dead")
 	elif randNum >= 4 and randNum <= 9:
 		# if the value is between 4 and 8 you loose an oxygen tank
-		print("tank")
 		if len(global_vars.tank_list) != 0:
 			# removes tank
 			global_vars.tank_list.remove(0) 
@@ -152,6 +151,10 @@ func _on_HitBox_body_entered(body):
 			get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
 	else:
 		# if your lucky, you live.
-		print("live")
 		pass
 		
+
+
+func _on_Suffocate_finished():
+	# Kills character after they suffocate
+	get_tree().change_scene("res://Scenes/Menues/GameOverScene.tscn")
