@@ -84,13 +84,13 @@ func _physics_process(delta):
 # Recieves signal from timer to decrease Oxygen 
 func _on_OxygenTimer_timeout():
 	#Decreases the amount of oxygen in the bar as a function of time 
-	$CanvasLayer/OxygenBar.value -= O2_change
+	$HUD/OxygenBar.value -= O2_change
 	# Replenishes O2 with spare tank when oxygen is empty
-	if $CanvasLayer/OxygenBar.value <= 0 and len(global_vars.tank_list)  != 0:
-		$CanvasLayer/OxygenBar.value = global_vars.tank_list[0]
+	if $HUD/OxygenBar.value <= 0 and len(global_vars.tank_list)  != 0:
+		$HUD/OxygenBar.value = global_vars.tank_list[0]
 		# Removes one spare tank
 		global_vars.tank_list.remove(0)
-	elif $CanvasLayer/OxygenBar.value <= 0 and len(global_vars.tank_list)  == 0:
+	elif $HUD/OxygenBar.value <= 0 and len(global_vars.tank_list)  == 0:
 		# This code gives the player a window while their character suffocates 
 		overtime -= O2_change
 		# Kills the character when overtime runs out. 

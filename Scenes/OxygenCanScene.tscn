@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/OxygenCanScene.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/O2Can.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 66.2722
@@ -16,8 +16,8 @@ collision_layer = 7
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5.96046e-08, 0 )
-scale = Vector2( 1.89844, 1.76172 )
+position = Vector2( 0, 2.38419e-07 )
+scale = Vector2( 2.46535, 2.2878 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="InArea?" to="." method="_on_InArea_body_entered"]

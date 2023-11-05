@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/astronaut_test.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerScript.gd" type="Script" id=2]
@@ -13,6 +13,42 @@ height = 180.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 113, 74 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.317647, 0.458824, 0.878431, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 50.0
+bg_color = Color( 0.643137, 0.623529, 0.592157, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.843137, 0.639216, 0.109804, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.643137, 0.623529, 0.592157, 1 )
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.843137, 0.639216, 0.109804, 1 )
+border_blend = true
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -56,25 +92,54 @@ current = true
 zoom = Vector2( 2.2, 2.2 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -73, -7 )
+position = Vector2( -0.999998, -1.99994 )
 scale = Vector2( 1.48777, 1.3765 )
 texture = ExtResource( 3 )
 texture_scale = 5.0
 energy = 0.5
 shadow_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="OxygenBar" type="ProgressBar" parent="CanvasLayer"]
-margin_left = 964.0
-margin_top = 598.0
-margin_right = 1322.0
-margin_bottom = 703.0
+[node name="OxygenBar" type="ProgressBar" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -113.0
+margin_right = 180.0
+margin_bottom = 3.0
 rect_rotation = 270.0
-custom_colors/font_color = Color( 0.0588235, 0.0431373, 0.372549, 1 )
+rect_scale = Vector2( 0.75, 0.75 )
+rect_clip_content = true
+custom_colors/font_color = Color( 0.188235, 0.160784, 0.764706, 1 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 value = 100.0
-rounded = true
 percent_visible = false
+
+[node name="O2Counter" type="Panel" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -116.0
+margin_right = -6.0
+rect_scale = Vector2( 0.75, 0.75 )
+rect_clip_content = true
+custom_styles/panel = SubResource( 6 )
+
+[node name="O2CounterText" type="Label" parent="HUD/O2Counter"]
+margin_left = 9.33325
+margin_top = 14.6667
+margin_right = 102.333
+margin_bottom = 102.667
+text = "1"
+align = 1
+valign = 1
+autowrap = true
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="timeout" from="OxygenTimer" to="." method="_on_OxygenTimer_timeout"]

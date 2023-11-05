@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Aura.gd" type="Script" id=2]
 
 [node name="Aura" type="Light2D"]
-position = Vector2( -42.9999, -27.0001 )
+position = Vector2( -10, -3 )
 scale = Vector2( 18.8236, 17.8619 )
 texture = ExtResource( 1 )
 texture_scale = 0.75
