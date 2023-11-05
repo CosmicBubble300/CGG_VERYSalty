@@ -98,7 +98,6 @@ position = Vector2( 664, 1137 )
 position = Vector2( 883, 391 )
 
 [node name="Monster" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1514, 894 )
 
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister" to="Character" method="_on_OxygenCanister_O2_updated"]
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister2" to="Character" method="_on_OxygenCanister_O2_updated"]
