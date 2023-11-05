@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/NewTiles/sideWallsTest.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/OxygenCanScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/NewTiles/cornerWall.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/MonsterScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/OxygenCanScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DoorScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Screen_3.png" type="Texture" id=7]
 
@@ -94,15 +93,6 @@ points = PoolVector2Array( 0, 0, 0, 0, 630, 0, 630, 300, 330, 300, 330, 630, 0, 
 6/shapes = [  ]
 6/z_index = 0
 
-[sub_resource type="Gradient" id=44]
-
-[sub_resource type="GradientTexture2D" id=45]
-gradient = SubResource( 44 )
-width = 100
-height = 100
-fill = 1
-fill_from = Vector2( 0.495833, 0.472917 )
-
 [node name="MainScene" type="Node2D"]
 
 [node name="TemporaryTiles" type="TileMap" parent="."]
@@ -117,29 +107,17 @@ position = Vector2( 1094, -484 )
 
 [node name="OxygenCanisters" type="Node2D" parent="."]
 
-[node name="OxygenCanister" parent="OxygenCanisters" instance=ExtResource( 3 )]
+[node name="OxygenCanister" parent="OxygenCanisters" instance=ExtResource( 5 )]
 position = Vector2( 381, 811 )
 
-[node name="OxygenCanister2" parent="OxygenCanisters" instance=ExtResource( 3 )]
+[node name="OxygenCanister2" parent="OxygenCanisters" instance=ExtResource( 5 )]
 position = Vector2( -38, 1094 )
 
-[node name="OxygenCanister3" parent="OxygenCanisters" instance=ExtResource( 3 )]
+[node name="OxygenCanister3" parent="OxygenCanisters" instance=ExtResource( 5 )]
 position = Vector2( 664, 1137 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 883, 391 )
-
-[node name="Monster" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1514, 894 )
-
-[node name="Aura" type="Light2D" parent="Monster"]
-position = Vector2( -53.5, -27 )
-scale = Vector2( 23.2458, 17.1017 )
-texture = SubResource( 45 )
-texture_scale = 2.77
-color = Color( 0.788235, 0.188235, 0.137255, 1 )
-energy = 0.35
-shadow_enabled = true
 
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister" to="Character" method="_on_OxygenCanister_O2_updated"]
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister2" to="Character" method="_on_OxygenCanister_O2_updated"]
