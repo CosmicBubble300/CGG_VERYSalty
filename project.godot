@@ -11,7 +11,6 @@ config_version=4
 [application]
 
 config/name="Cgg Very Salty"
-run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
