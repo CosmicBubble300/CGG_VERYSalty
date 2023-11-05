@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/NewTiles/sideWallsTest.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/OxygenCanScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/NewTiles/cornerWall.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/OxygenCanScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/MonsterScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DoorScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Screen_3.png" type="Texture" id=7]
 
@@ -107,17 +108,20 @@ position = Vector2( 1094, -484 )
 
 [node name="OxygenCanisters" type="Node2D" parent="."]
 
-[node name="OxygenCanister" parent="OxygenCanisters" instance=ExtResource( 5 )]
+[node name="OxygenCanister" parent="OxygenCanisters" instance=ExtResource( 3 )]
 position = Vector2( 381, 811 )
 
-[node name="OxygenCanister2" parent="OxygenCanisters" instance=ExtResource( 5 )]
+[node name="OxygenCanister2" parent="OxygenCanisters" instance=ExtResource( 3 )]
 position = Vector2( -38, 1094 )
 
-[node name="OxygenCanister3" parent="OxygenCanisters" instance=ExtResource( 5 )]
+[node name="OxygenCanister3" parent="OxygenCanisters" instance=ExtResource( 3 )]
 position = Vector2( 664, 1137 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 883, 391 )
+
+[node name="Monster" parent="." instance=ExtResource( 5 )]
+collision_layer = 3
 
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister" to="Character" method="_on_OxygenCanister_O2_updated"]
 [connection signal="O2_updated" from="OxygenCanisters/OxygenCanister2" to="Character" method="_on_OxygenCanister_O2_updated"]
