@@ -4,20 +4,7 @@
 [ext_resource path="res://Assets/Fonts/Painless_64.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/MenuScene.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/ZOMBIES REBORN.ttf" type="DynamicFontData" id=4]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.101961, 0.133333, 0.247059, 1 )
-border_width_left = 40
-border_width_top = 40
-border_width_right = 40
-border_width_bottom = 40
-border_color = Color( 0.0392157, 0.0470588, 0.129412, 1 )
-border_blend = true
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_size = 20
+[ext_resource path="res://Assets/MenuBack.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -26,12 +13,13 @@ font_data = ExtResource( 4 )
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="Panel" type="Panel" parent="."]
+[node name="MenuBackground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 1 )
+texture = ExtResource( 5 )
+expand = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 40.0
@@ -39,12 +27,12 @@ margin_top = 60.0
 margin_right = -40.0
 margin_bottom = -40.0
 
-[node name="Rows" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="Rows" type="VBoxContainer" parent="MenuBackground/MarginContainer"]
 margin_right = 944.0
 margin_bottom = 500.0
 custom_constants/separation = 60
 
-[node name="text" type="Label" parent="Panel/MarginContainer/Rows"]
+[node name="text" type="Label" parent="MenuBackground/MarginContainer/Rows"]
 margin_right = 944.0
 margin_bottom = 94.0
 custom_fonts/font = ExtResource( 2 )
@@ -52,31 +40,31 @@ text = "SILENCE"
 align = 1
 valign = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/Rows"]
+[node name="CenterContainer" type="CenterContainer" parent="MenuBackground/MarginContainer/Rows"]
 margin_top = 154.0
 margin_right = 944.0
 margin_bottom = 234.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Rows/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/MarginContainer/Rows/CenterContainer"]
 margin_left = 409.0
 margin_right = 534.0
 margin_bottom = 80.0
 custom_constants/separation = 20
 
-[node name="restart" type="Button" parent="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer"]
+[node name="restart" type="Button" parent="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 margin_right = 125.0
 margin_bottom = 30.0
 custom_fonts/font = ExtResource( 1 )
 text = "   START  "
 
-[node name="quit" type="Button" parent="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 margin_top = 50.0
 margin_right = 125.0
 margin_bottom = 80.0
 custom_fonts/font = ExtResource( 1 )
 text = "Quit "
 
-[node name="Warning" type="Label" parent="Panel/MarginContainer/Rows"]
+[node name="Warning" type="Label" parent="MenuBackground/MarginContainer/Rows"]
 margin_top = 294.0
 margin_right = 944.0
 margin_bottom = 399.0
@@ -85,5 +73,5 @@ text = "Warning: This game contains flashing lights, and disturbing noises, view
 align = 1
 autowrap = true
 
-[connection signal="pressed" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
-[connection signal="toggled" from="Panel/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_toggled"]
+[connection signal="pressed" from="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="toggled" from="MenuBackground/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_toggled"]

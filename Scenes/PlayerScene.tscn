@@ -81,7 +81,7 @@ __meta__ = {
 position = Vector2( -135, -212 )
 frames = ExtResource( 1 )
 animation = "BackIdle"
-frame = 28
+frame = 8
 playing = true
 centered = false
 
