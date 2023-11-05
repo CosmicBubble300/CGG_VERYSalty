@@ -1,24 +1,56 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/astronaut_test.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/PlayerScript.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 111.0
-height = 160.0
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 98.0
+height = 180.0
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 115.25, 59 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 113, 74 )
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
+[node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource( 2 )
+
+[node name="ObjectCollsion" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 114 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -7 )
 texture = ExtResource( 1 )
+region_rect = Rect2( 100, 100, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.25, 139 )
-shape = SubResource( 2 )
+[node name="OxygenBar" type="ProgressBar" parent="."]
+margin_left = 979.0
+margin_top = 598.0
+margin_right = 1337.0
+margin_bottom = 688.0
+rect_rotation = 270.0
+value = 100.0
+percent_visible = false
+
+[node name="OxygenTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[node name="PlayerCam" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2.2, 2.2 )
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="timeout" from="OxygenTimer" to="." method="_on_OxygenTimer_timeout"]
