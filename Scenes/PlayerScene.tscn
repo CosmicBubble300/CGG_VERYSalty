@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/PlayerAnimation/CharacterAnimation.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/PlayerScript.gd" type="Script" id=2]
 [ext_resource path="res://Assets/light.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=4]
 [ext_resource path="res://Assets/FinalTileSets/Sengatz_24.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Audio/Heavy_breathing.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Ambient_Machines.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Suffocate-1.mp3" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 114, 198.5 )
@@ -81,7 +84,6 @@ __meta__ = {
 position = Vector2( -135, -212 )
 frames = ExtResource( 1 )
 animation = "BackIdle"
-frame = 8
 playing = true
 centered = false
 
@@ -144,6 +146,25 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Breathing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+pitch_scale = 0.55
+autoplay = true
+mix_target = 1
+
+[node name="AmbientMachine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 10.0
+autoplay = true
+mix_target = 1
+
+[node name="Suffocate" type="AudioStreamPlayer" parent="."]
+process_priority = 1
+stream = ExtResource( 8 )
+pitch_scale = 0.55
+mix_target = 2
+
 [connection signal="tanks_update" from="." to="HUD" method="_on_Character_tanks_update"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="timeout" from="OxygenTimer" to="." method="_on_OxygenTimer_timeout"]
+[connection signal="finished" from="Suffocate" to="." method="_on_Suffocate_finished"]
